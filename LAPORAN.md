@@ -25,7 +25,7 @@ flowchart TB
     User[Client / Browser / curl] --> LB[Azure Load Balancer\nPublic IP: pip-02]
     LB --> VM1[VM 1: rayzabuf\nPrivate IP\nDocker + Nginx]
     LB --> VM2[VM 2: vm-affan\nPrivate IP\nDocker + Nginx]
-    LB --> VM3[VM 3: VMLUCKY\nPublic IP\nDocker + Nginx]
+    LB --> VM3[VM 3: VMLUCKY\nPublic IP + Private IP\nDocker + Nginx]
     LB --> VM4[VM 4: VMSAS\nPrivate IP\nDocker + Nginx]
     VM1 --> VNet[Virtual Network: vnet-lbeKorea]
     VM2 --> VNet
@@ -50,7 +50,7 @@ Resource yang telah dibuat pada Resource Group `fp-lbe-team02`:
 - Virtual Machine: `VMSAS`
 - Network Security Group tersedia untuk masing-masing VM
 
-Hanya satu VM yang menggunakan Public IP untuk kebutuhan administrasi. VM lainnya menggunakan private IP dalam Virtual Network. Akses aplikasi dilakukan melalui Public IP milik Azure Load Balancer.
+`VMLUCKY` adalah satu-satunya VM yang memiliki Public IP dan digunakan untuk kebutuhan administrasi. `rayzabuf`, `vm-affan`, dan `VMSAS` hanya menggunakan private IP dalam Virtual Network. Akses aplikasi tetap dilakukan melalui Public IP milik Azure Load Balancer `pip-02`, bukan melalui Public IP `VMLUCKY`.
 
 ## 4. Teknologi yang Digunakan
 
