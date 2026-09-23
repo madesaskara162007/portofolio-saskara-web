@@ -25,7 +25,7 @@ flowchart TB
     User[Client / Browser / curl] --> LB[Azure Load Balancer\nPublic IP: pip-02]
     LB --> VM1[VM 1: rayzabuf\nPrivate IP\nDocker + Nginx]
     LB --> VM2[VM 2: vm-affan\nPrivate IP\nDocker + Nginx]
-    LB --> VM3[VM 3: VMLUCKY\nPrivate IP\nDocker + Nginx]
+    LB --> VM3[VM 3: VMLUCKY\nPublic IP\nDocker + Nginx]
     LB --> VM4[VM 4: VMSAS\nPrivate IP\nDocker + Nginx]
     VM1 --> VNet[Virtual Network: vnet-lbeKorea]
     VM2 --> VNet
