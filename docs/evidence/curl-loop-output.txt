@@ -1,0 +1,6 @@
+# Isi file ini dengan output pengujian setelah Load Balancer aktif.
+# Jalankan dari PowerShell:
+# for ($i=1; $i -le 30; $i++) {
+#     (Invoke-WebRequest -Uri "http://<PUBLIC_IP_LOAD_BALANCER>" -UseBasicParsing).Content |
+#         Select-String -Pattern "Backend:"
+# }
